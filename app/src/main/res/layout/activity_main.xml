@@ -10,8 +10,20 @@
                 android:background="@color/material_blue_grey_800">
 
     <TextView
+        android:id="@+id/abcdtv"
         android:text="@string/hello_world"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/bottomLayer"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/abcdtv"
+        android:background="@color/secondary_text_default_material_dark"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
 
 </RelativeLayout>

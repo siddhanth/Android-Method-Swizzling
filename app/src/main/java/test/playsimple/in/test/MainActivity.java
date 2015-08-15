@@ -4,11 +4,12 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.widget.LinearLayout;
 
 import java.io.File;
-import java.lang.reflect.Method;
 
 import dalvik.system.DexClassLoader;
+import test.playsimple.in.test.prototype.MyClassInterface;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -22,17 +23,20 @@ public class MainActivity extends ActionBarActivity {
         try {
 
 //            createDir();
-            final String libPath = Environment.getExternalStorageDirectory().toString() + "/"+Constants.TAG+"/dl.dex";
-            Log.d(Constants.TAG, "file exists = "+fileExists(Constants.TAG+"/dl.dex"));
+            final String libPath = Environment.getExternalStorageDirectory().toString() + "/"+Constants.TAG+"/dl.aar";
+            Log.d(Constants.TAG, "file exists = "+fileExists(Constants.TAG+"/dl.aar"));
             final File tmpDir = getDir("dex", 0);
 
             final DexClassLoader classloader = new DexClassLoader(libPath, tmpDir.getAbsolutePath(), null, this.getClass().getClassLoader());
-            final Class<Object> classToLoad = (Class<Object>) classloader.loadClass("in.dl.MyClass");
+            final Class<Object> classToLoad = (Class<Object>) classloader.loadClass("test.playsimple.in.test.MyClass");
 
             final Object myInstance  = classToLoad.newInstance();
-            final Method doSomething = classToLoad.getMethod("doSomething");
+            MyClassInterface o1 = (MyClassInterface) myInstance;
+            LinearLayout layout = (LinearLayout) this.findViewById(R.id.bottomLayer);
+            o1.adButton(layout, this);
 
-            doSomething.invoke(myInstance);
+//            final Method doSomething = classToLoad.getMethod("doSomething");
+//            doSomething.invoke(myInstance);
 
         } catch (Exception e) {
             e.printStackTrace();
