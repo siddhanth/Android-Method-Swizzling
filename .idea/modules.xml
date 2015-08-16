@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Android-Method-Swizzling.iml" filepath="$PROJECT_DIR$/Android-Method-Swizzling.iml" />
       <module fileurl="file://$PROJECT_DIR$/Dynamic Loading/Dynamic Loading.iml" filepath="$PROJECT_DIR$/Dynamic Loading/Dynamic Loading.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Test.iml" filepath="$PROJECT_DIR$/Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
-

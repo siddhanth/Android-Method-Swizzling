@@ -23,8 +23,8 @@ public class MainActivity extends ActionBarActivity {
         try {
 
 //            createDir();
-            final String libPath = Environment.getExternalStorageDirectory().toString() + "/"+Constants.TAG+"/dl.aar";
-            Log.d(Constants.TAG, "file exists = "+fileExists(Constants.TAG+"/dl.aar"));
+            final String libPath = Environment.getExternalStorageDirectory().toString() + "/"+Constants.TAG+"/dl.dex";
+            Log.d(Constants.TAG, "file exists = "+fileExists(Constants.TAG+"/dl.dex"));
             final File tmpDir = getDir("dex", 0);
 
             final DexClassLoader classloader = new DexClassLoader(libPath, tmpDir.getAbsolutePath(), null, this.getClass().getClassLoader());
